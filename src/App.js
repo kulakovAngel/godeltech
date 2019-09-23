@@ -1,26 +1,32 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Key from './Key';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+    constructor (props) {
+        super(props);
+    }
+    render() {
+        return (
+            <>
+                <div className='whites'>
+                    <Key color='white' note='do'/>
+                    <Key color='white' note='re'/>
+                    <Key color='white' note='mi'/>
+                    <Key color='white' note='fa'/>
+                    <Key color='white' note='sol'/>
+                    <Key color='white' note='la'/>
+                    <Key color='white' note='si'/>
+                </div>
+                <div className='blacks'>
+                    <Key color='black' note='As5'/>
+                    <Key color='black' note='Cs4'/>
+                    <Key color='black' note='Gs4'/>
+                    <Key color='black' note='Gs4'/>
+                    <Key color='black' note='Gs4'/>
+                </div>
+            </>
+        )
+    }
 }
-
 export default App;
