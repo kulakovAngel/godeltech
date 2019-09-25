@@ -25,7 +25,7 @@ class App extends React.Component {
             if (item[Object.keys(item)[1]] === e.which) {
                 this.onDown(Object.keys(item)[0]);
             };
-        });qweqwasdasasdsd
+        });
     }
     
     onPhysicalUp(e) {
