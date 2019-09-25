@@ -13,6 +13,12 @@ class App extends React.Component {
         this.onUp = this.onUp.bind(this);
         this.onPhysicalDown = this.onPhysicalDown.bind(this);
         this.onPhysicalUp = this.onPhysicalUp.bind(this);
+        this.playExample = this.playExample.bind(this);
+        this.inputToFocus = this.inputToFocus.bind(this);
+    }
+    
+    inputToFocus(e) {
+        e.target.focus();
     }
     
     onPhysicalDown(e) {
@@ -73,6 +79,21 @@ class App extends React.Component {
         this.forceUpdate();
     }
     
+    playExample() {
+        this.onDown('C4');
+        setTimeout(() => {
+            this.onUp('C4');
+            this.onDown('D4');
+            setTimeout(() => {
+                this.onUp('D4');
+                this.onDown('Fs4');
+                setTimeout(() => {
+                    this.onUp('Fs4');
+                },1000);
+            },500);
+        },1000);
+    }
+    
     render() {
         const whites = this.state.whites;
         const blacks = this.state.blacks;
@@ -80,6 +101,7 @@ class App extends React.Component {
             <>
                 <input  type="text"
                         autoFocus
+                        onBlur={this.inputToFocus}
                         onKeyDown={this.onPhysicalDown}
                         onKeyUp={this.onPhysicalUp} />
                 <div className='whites'>
@@ -104,6 +126,7 @@ class App extends React.Component {
                              onUp={this.onUp} />
                     ))}
                 </div>
+                <button onClick={this.playExample}>Example</button>
             </>
         )
     }
