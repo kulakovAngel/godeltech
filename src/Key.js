@@ -15,9 +15,7 @@ class Key extends React.Component {
     }
     
     onUp(e) {
-        setTimeout(() => {
-            this.setState({isActive: false});
-        }, 1000 );
+        this.setState({isActive: false});
     }
     
     render() {
