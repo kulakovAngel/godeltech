@@ -6,8 +6,8 @@ class App extends React.Component {
     constructor (props) {
         super(props);
         this.state = {
-                        whites: [{C4: false,key:81},{D4: false,key:87},{E4: false,key:69},{F4: false,key:82},{G4: false,key:84},{A4: false,key:89},{B4: false,key:85},{C5: false,key:90},{D5: false,key:88},{E5: false,key:67},{F5: false,key:86},{G5: false,key:66},{A5: false,key:78},{B5: false,key:77}],
-                        blacks: [{Cs4: false,key:50},{Ds4: false,key:51},{Fs4: false,key:53},{Gs4: false,key:54},{As4: false,key:55},{Cs5: false,key:83},{Ds5: false,key:68},{Fs5: false,key:71},{Gs5: false,key:72},{As5: false,key:74}]
+                        whites: [{C4: false,key:81,letter:'Q'},{D4: false,key:87,letter:'W'},{E4: false,key:69,letter:'E'},{F4: false,key:82,letter:'R'},{G4: false,key:84,letter:'T'},{A4: false,key:89,letter:'Y'},{B4: false,key:85,letter:'U'},{C5: false,key:90,letter:'Z'},{D5: false,key:88,letter:'X'},{E5: false,key:67,letter:'C'},{F5: false,key:86,letter:'V'},{G5: false,key:66,letter:'B'},{A5: false,key:78,letter:'N'},{B5: false,key:77,letter:'M'}],
+                        blacks: [{Cs4: false,key:50,letter:'2'},{Ds4: false,key:51,letter:'3'},{Fs4: false,key:53,letter:'5'},{Gs4: false,key:54,letter:'6'},{As4: false,key:55,letter:'7'},{Cs5: false,key:83,letter:'S'},{Ds5: false,key:68,letter:'D'},{Fs5: false,key:71,letter:'G'},{Gs5: false,key:72,letter:'H'},{As5: false,key:74,letter:'J'}]
                     };
         this.onDown = this.onDown.bind(this);
         this.onUp = this.onUp.bind(this);
@@ -87,6 +87,7 @@ class App extends React.Component {
                         <Key key={i}
                              color='white'
                              note={Object.keys(val)[0]}
+                             letter={val[Object.keys(val)[2]]}
                              isActive={val[Object.keys(val)[0]]}
                              onDown={this.onDown}
                              onUp={this.onUp} />
@@ -97,6 +98,7 @@ class App extends React.Component {
                         <Key key={i}
                              color='black'
                              note={Object.keys(val)[0]}
+                             letter={val[Object.keys(val)[2]]}
                              isActive={val[Object.keys(val)[0]]}
                              onDown={this.onDown}
                              onUp={this.onUp} />

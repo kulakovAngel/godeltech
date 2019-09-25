@@ -26,6 +26,7 @@ class Key extends React.Component {
                    onMouseUp={this.onUp}
                    data-active={active}
                 >
+                    {this.props.letter}
                     {(isActive ? <audio src={note} autoPlay></audio> : '')}
                     
                 </div>
