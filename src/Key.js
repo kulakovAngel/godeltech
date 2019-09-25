@@ -3,26 +3,23 @@ import React from 'react';
 class Key extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-            isActive: false
-        }
         this.onDown = this.onDown.bind(this);
         this.onUp = this.onUp.bind(this);
     }
     
-    onDown(e) {
-        this.setState({isActive: true});
+    onDown() {
+        this.props.onDown(this.props.note);
     }
     
-    onUp(e) {
-        this.setState({isActive: false});
+    onUp() {
+        this.props.onUp(this.props.note);
     }
     
     render() {
         const color = this.props.color;
-        const active = this.state.isActive;
+        const active = this.props.isActive;
         const note = 'notes/' + this.props.note + '.mp3';
-        const isActive = this.state.isActive;
+        const isActive = this.props.isActive;
         return <div className=
                    {(color === 'white') ? 'key-white' : 'key-black'}
                    onMouseDown={this.onDown}
