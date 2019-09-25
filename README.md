@@ -3,7 +3,9 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## Available Scripts
 
 In the project directory, you can run:
-### `npm install`
+
+'''diff
+!### `npm install`
 
 Sure!
 Used to install dependencies from an existing package.json file
